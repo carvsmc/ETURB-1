@@ -118,7 +118,24 @@ map.on('click', 'csvData', function(e) {
 });
 
 //
-
+const marker = new mapboxgl.Marker({
+    draggable: true
+})
+    .setLngLat([lng, lat])
+    .addTo(map);
+ 
+function onDragEnd() {
+const lngLat = marker.getLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+    info.innerHTML = `${lngLat.lng}`;
+    info2.innerHTML = `${lngLat.lat}`;
+}
+ 
+marker.on('dragend', onDragEnd);
+    
+    
+    
 //Pegar a data local do computador
 
 var today = new Date();
