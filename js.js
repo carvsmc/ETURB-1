@@ -62,8 +62,10 @@ csv2geojson.csv2geojson(csvData, {
         'data': data
       },
       'paint': {
-        'circle-radius': 5,
-        'circle-color': "purple"
+        'circle-color': '#EF9A31',
+        'circle-radius': 7,
+        'circle-stroke-width': 1,
+        'circle-stroke-color': '#ffffff'
       }
     });
 
